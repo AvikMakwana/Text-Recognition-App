@@ -1,5 +1,7 @@
 package com.example.textscanner;
 
+import static android.Manifest.permission.CAMERA;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,7 +81,7 @@ public class ScannerActivity extends AppCompatActivity {
 
     private void requestPermission(){
         int PERMISSION_CODE = 200;
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission_group.CAMERA},PERMISSION_CODE);
+        ActivityCompat.requestPermissions(this,new String[]{CAMERA},PERMISSION_CODE);
     }
 
     private void captureImage(){
