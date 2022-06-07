@@ -5,51 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black1"
-    tools:context=".MainActivity">
+    tools:context=".ScannerActivity">
 
     <ImageView
-        android:id="@+id/idIVELogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/idIVCaptureImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/scanner" />
 
     <TextView
-        android:id="@+id/idTVHead"
+        android:id="@+id/idTVScanText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/idIVELogo"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/idIVCaptureImage"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="Welcome to Text Scanner"
+        android:padding="4dp"
+        android:text="Scanned Text Appear Here"
         android:textAlignment="center"
         android:textColor="@color/yellow"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/idBtnCapture"
+        android:id="@+id/idBtnSnap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/idTVHead"
+        android:layout_below="@+id/idTVScanText"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
-        android:text="Scan Image"
+        android:text="Snap"
         android:textAllCaps="false"
         android:textColor="@color/black1"
         android:textSize="20sp"
         app:backgroundTint="@color/yellow" />
 
-
-
+    <Button
+        android:id="@+id/idBtnScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idBtnSnap"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_background"
+        android:text="Scan Text"
+        android:textAllCaps="false"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        app:backgroundTint="@color/yellow" />
 
 
 </RelativeLayout>
