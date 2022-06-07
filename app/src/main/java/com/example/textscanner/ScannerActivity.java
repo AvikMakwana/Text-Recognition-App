@@ -1,14 +1,12 @@
 package com.example.textscanner;
 
-import static android.Manifest.permission_group.CAMERA;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.content.Context;
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -29,7 +27,6 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
-import com.google.mlkit.vision.text.TextRecognizerOptionsInterface;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 public class ScannerActivity extends AppCompatActivity {
@@ -76,13 +73,13 @@ public class ScannerActivity extends AppCompatActivity {
     //Methods
 
     private boolean checkPermission(){
-        int cameraPermission = ContextCompat.checkSelfPermission(getApplicationContext(),CAMERA);
+        int cameraPermission = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission_group.CAMERA);
         return cameraPermission == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermission(){
         int PERMISSION_CODE = 200;
-        ActivityCompat.requestPermissions(this,new String[]{CAMERA},PERMISSION_CODE);
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission_group.CAMERA},PERMISSION_CODE);
     }
 
     private void captureImage(){
@@ -96,7 +93,7 @@ public class ScannerActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (grantResults.length>0){
-            boolean cameraPermission =grantResults[0] == PackageManager.PERMISSION_GRANTED;
+            boolean cameraPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
             if (cameraPermission){
                 Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
                 captureImage();
